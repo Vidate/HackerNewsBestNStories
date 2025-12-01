@@ -11,7 +11,7 @@ public interface IHackerNewsApiClient
     Task<StoryDto?> GetStoryById(int storyId, CancellationToken cancellationToken);
 }
 
-public class HackerNewsApiClient(HttpClient httpClient, ILogger<HackerNewsApiClient> logger) : IHackerNewsApiClient
+public class HackerNewsApiClient(HttpClient httpClient) : IHackerNewsApiClient
 {
     private static readonly JsonSerializerOptions JsonOptions = new()
     {

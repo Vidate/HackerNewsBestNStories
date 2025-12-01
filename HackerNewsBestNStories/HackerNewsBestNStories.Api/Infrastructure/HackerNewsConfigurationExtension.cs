@@ -13,7 +13,7 @@ public static class HackerNewsConfigurationExtension
         services.AddHttpClient<IHackerNewsApiClient, HackerNewsApiClient>(client =>
         {
             var hackerNewsApiConfiguration = configuration.GetSection(nameof(HackerNewsApiConfiguration)).Get<HackerNewsApiConfiguration>();
-            client.BaseAddress = new Uri(hackerNewsApiConfiguration.BaseUrl);
+            client.BaseAddress = new Uri(hackerNewsApiConfiguration!.BaseUrl);
         });
     }
     
